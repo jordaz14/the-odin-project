@@ -1,0 +1,19 @@
+h1,
+img,
+p {
+  width: 500px;
+}
+
+h1 {
+  background-color: darkred;
+  color: white;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  border-radius: 25px;
+}
+
+p {
+}
