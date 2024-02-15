@@ -70,7 +70,18 @@ p {
 
 .quote-section {
   background-color: #e5e7eb;
-  padding: 16px 20%;
+  padding: 40px 25%;
+}
+
+.quote {
+  font-size: 26px;
+  font-weight: lighter;
+  font-style: italic;
+  color: #1f2937af;
+}
+
+.quote-author {
+  text-align: right;
 }
 
 .cta-section {
