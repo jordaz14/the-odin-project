@@ -1,8 +1,38 @@
+
+
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
+  font-family: Roboto;
+}
+
+.header {
+  display: flex;
+  background-color: #1f2937;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .quote-section {
