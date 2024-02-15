@@ -14,7 +14,7 @@ body {
   color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 20px 20%;
 }
 
 .header-logo {
@@ -35,10 +35,8 @@ a {
   color: white;
 }
 
-h1 {
-  margin: 0;
-}
-
+h1,
+h2,
 p {
   margin: 0;
 }
@@ -50,6 +48,7 @@ p {
   align-items: center;
   justify-content: center;
   height: 250px;
+  padding: 20px 20%;
 }
 
 .hero-section-text {
@@ -65,21 +64,26 @@ p {
   padding: 16px;
 }
 
+.info-section {
+  padding: 20px 20%;
+}
+
 .quote-section {
   background-color: #e5e7eb;
+  padding: 16px 20%;
 }
 
 .cta-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 10px;
+  padding: 60px 20%;
 }
 
 .cta-card {
   background-color: #3882f6;
   color: white;
-  width: 75%;
+  width: 100%;
   padding: 20px;
   border-radius: 25px;
 }
@@ -87,7 +91,7 @@ p {
 .footer {
   background-color: #1f2937;
   color: white;
-  padding: 20px;
+  padding: 20px 20%;
   text-align: center;
   margin-top: auto;
 }
