@@ -35,6 +35,36 @@ a {
   color: white;
 }
 
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.hero-section {
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.hero-section-text {
+  height: 50%;
+}
+
+.hero-section-image {
+  background-color: #6d747d;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
 .quote-section {
   background-color: #e5e7eb;
 }
