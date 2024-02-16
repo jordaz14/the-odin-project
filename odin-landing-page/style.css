@@ -46,13 +46,27 @@ p {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 250px;
+  justify-content: space-between;
+  height: 350px;
   padding: 20px 20%;
+  gap: 10px;
 }
 
 .hero-section-text {
   height: 50%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-section-text p {
+  color: hsl(0, 0%, 80%);
+}
+
+.hero-section-text button {
+  width: 80px;
+  border-color: #3882f6;
 }
 
 .hero-section-image {
@@ -62,6 +76,7 @@ p {
   justify-content: center;
   align-items: center;
   padding: 16px;
+  flex: 1;
 }
 
 .info-section {
