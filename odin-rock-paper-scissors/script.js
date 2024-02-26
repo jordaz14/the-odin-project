@@ -1,6 +1,3 @@
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-
 function getComputerChoice() {
   let computerOptions = ["rock", "paper", "scissors"];
   return computerOptions[Math.floor(Math.random() * 3)];
@@ -27,7 +24,7 @@ function playGame() {
   let playerWins = 0;
   let gameTies = 0;
   for (let i = 0; i < 5; i++) {
-    let result = playRound();
+    let result = playRound(getComputerChoice(), getPlayerChoice());
     result == "Tie."
       ? gameTies++
       : result.includes("You win.")
