@@ -1,15 +1,19 @@
 body {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(240, 105, 105);
 }
 
 .container {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
   width: 960px;
   padding: 10px;
+  margin-top: 10px;
   background-color: rgb(221, 221, 221);
   border: solid;
 }
@@ -17,15 +21,14 @@ body {
 .container-row {
   display: flex;
   width: 100%;
+  flex: 1;
 }
 
 .container-square {
-  height: 50px;
-  width: 50px;
+  width: 100%;
   background-color: rgb(245, 238, 238);
-  margin: 5px 5px;
 }
 
-.container-square:hover {
+.container-square-hover {
   background-color: rgb(158, 157, 157);
 }
