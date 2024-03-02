@@ -7,16 +7,23 @@ body {
 }
 
 .container {
-  height: 500px;
+  height: auto;
   width: 960px;
+  padding: 10px;
   background-color: rgb(221, 221, 221);
   border: solid;
+}
+
+.container-row {
+  display: flex;
+  width: 100%;
 }
 
 .container-square {
   height: 50px;
   width: 50px;
   background-color: rgb(245, 238, 238);
+  margin: 5px 5px;
 }
 
 .container-square:hover {
