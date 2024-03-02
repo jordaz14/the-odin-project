@@ -6,6 +6,9 @@ for (i = 0; i < 16; i++) {
   for (j = 0; j < 16; j++) {
     const containerSquare = document.createElement("div");
     containerSquare.classList.add("container-square");
+    containerSquare.addEventListener("mouseover", () => {
+      containerSquare.classList.add("container-square-hover");
+    });
     containerRow.appendChild(containerSquare);
   }
   container.appendChild(containerRow);
