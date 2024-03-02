@@ -3,10 +3,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(240, 105, 105);
 }
 
 .container {
   height: 500px;
-  width: 500px;
+  width: 960px;
   background-color: rgb(221, 221, 221);
+  border: solid;
+}
+
+.container-square {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(245, 238, 238);
+}
+
+.container-square:hover {
+  background-color: rgb(158, 157, 157);
 }
