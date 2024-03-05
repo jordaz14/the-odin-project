@@ -31,3 +31,13 @@ function calcNums(operator, firstNum, secondNum) {
     ? divideNums(firstNum, secondNum)
     : "ERR";
 }
+
+let displayValue = document.querySelector(".calc-container-screen");
+
+let operandButtons = Array.from(document.querySelectorAll(".operand"));
+operandButtons.forEach((button) => {
+  button.addEventListener(
+    "click",
+    () => (displayValue.textContent += button.textContent)
+  );
+});
