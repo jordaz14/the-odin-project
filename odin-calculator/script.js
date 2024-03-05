@@ -16,8 +16,8 @@ function divideNums(n1, n2) {
   return n1 / n2;
 }
 
-let firstNum;
-let secondNum;
+let firstNum = 0;
+let secondNum = 0;
 let operator;
 
 function calcNums(operator, firstNum, secondNum) {
@@ -32,12 +32,32 @@ function calcNums(operator, firstNum, secondNum) {
     : "ERR";
 }
 
-let displayValue = document.querySelector(".calc-container-screen");
+let calcScreen = document.querySelector(".calc-container-screen");
 
 let operandButtons = Array.from(document.querySelectorAll(".operand"));
+
 operandButtons.forEach((button) => {
   button.addEventListener(
     "click",
-    () => (displayValue.textContent += button.textContent)
+    () => (calcScreen.textContent += button.textContent)
   );
+});
+
+let operatorButtons = Array.from(document.querySelectorAll(".operator"));
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.textContent == "=") {
+      secondNum = calcScreen.textContent;
+      calcScreen.textContent = calcNums(
+        operator,
+        Number(firstNum),
+        Number(secondNum)
+      );
+    } else {
+      firstNum = calcScreen.textContent;
+      operator = button.textContent;
+      calcScreen.textContent = "";
+    }
+  });
 });
