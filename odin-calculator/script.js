@@ -1,22 +1,31 @@
 console.log("Hello World");
 
+const DIGITLIMIT = 99999999;
+
 function addNums(n1, n2) {
-  return n1 + n2;
+  return n1 + n2 > DIGITLIMIT ? (n1 + n2).toExponential(2) : n1 + n2;
 }
 
 function subtractNums(n1, n2) {
-  return n1 - n2;
+  if (n1 - n2 > DIGITLIMIT) {
+    return (n1 - n2).toExponential(2);
+  } else if (n1 - n2 < -DIGITLIMIT) {
+    return (n1 - n2).toExponential(2);
+  }
 }
 
 function multiplyNums(n1, n2) {
-  return n1 * n2;
+  return n1 * n2 > DIGITLIMIT ? (n1 * n2).toExponential(2) : n1 * n2;
 }
 
 function divideNums(n1, n2) {
   if (n2 == 0) {
     return "Nope.";
+  } else if (n1 / n2 > DIGITLIMIT) {
+    return (n1 / n2).toExponential(2);
+  } else {
+    return n1 / n2;
   }
-  return n1 / n2;
 }
 
 let firstNum = "";
