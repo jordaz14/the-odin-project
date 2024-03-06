@@ -13,12 +13,16 @@ function multiplyNums(n1, n2) {
 }
 
 function divideNums(n1, n2) {
+  if (n2 == 0) {
+    return "Nope.";
+  }
   return n1 / n2;
 }
 
-let firstNum = 0;
-let secondNum = 0;
+let firstNum;
+let secondNum;
 let operator;
+let result;
 
 function calcNums(operator, firstNum, secondNum) {
   return operator == "+"
@@ -29,7 +33,7 @@ function calcNums(operator, firstNum, secondNum) {
     ? multiplyNums(firstNum, secondNum)
     : operator == "/"
     ? divideNums(firstNum, secondNum)
-    : "ERR";
+    : "";
 }
 
 let calcScreen = document.querySelector(".calc-container-screen");
@@ -37,10 +41,18 @@ let calcScreen = document.querySelector(".calc-container-screen");
 let operandButtons = Array.from(document.querySelectorAll(".operand"));
 
 operandButtons.forEach((button) => {
-  button.addEventListener(
-    "click",
-    () => (calcScreen.textContent += button.textContent)
-  );
+  button.addEventListener("click", () => {
+    if (result) {
+      result = "";
+      firstNum = "";
+      secondNum = "";
+      operator = "";
+      calcScreen.textContent = "";
+      calcScreen.textContent += button.textContent;
+    } else {
+      calcScreen.textContent += button.textContent;
+    }
+  });
 });
 
 let operatorButtons = Array.from(document.querySelectorAll(".operator"));
@@ -48,16 +60,36 @@ let operatorButtons = Array.from(document.querySelectorAll(".operator"));
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent == "=") {
-      secondNum = calcScreen.textContent;
-      calcScreen.textContent = calcNums(
-        operator,
-        Number(firstNum),
-        Number(secondNum)
-      );
+      if (firstNum) {
+        secondNum = calcScreen.textContent;
+        result = calcNums(operator, Number(firstNum), Number(secondNum));
+        calcScreen.textContent = result;
+      } else {
+        firstNum = calcScreen.textContent;
+      }
     } else {
-      firstNum = calcScreen.textContent;
-      operator = button.textContent;
-      calcScreen.textContent = "";
+      if (result) {
+        firstNum = result;
+        result = "";
+        secondNum = 0;
+        calcScreen.textContent = "";
+      } else if (firstNum) {
+        secondNum = calcScreen.textContent;
+        result = calcNums(operator, Number(firstNum), Number(secondNum));
+        calcScreen.textContent = result;
+      } else {
+        firstNum = calcScreen.textContent;
+        operator = button.textContent;
+        calcScreen.textContent = "";
+      }
     }
   });
+});
+
+let clearButton = document.querySelector("#clearButton");
+clearButton.addEventListener("click", () => {
+  calcScreen.textContent = "";
+  firstNum = "";
+  secondNum = "";
+  operator = "";
 });
