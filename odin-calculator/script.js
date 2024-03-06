@@ -11,6 +11,8 @@ function subtractNums(n1, n2) {
     return (n1 - n2).toExponential(2);
   } else if (n1 - n2 < -DIGITLIMIT) {
     return (n1 - n2).toExponential(2);
+  } else {
+    return n1 - n2;
   }
 }
 
@@ -102,4 +104,21 @@ clearButton.addEventListener("click", () => {
   firstNum = "";
   secondNum = "";
   totalNum = "";
+});
+
+let signButton = document.querySelector("#signButton");
+signButton.addEventListener("click", () => {
+  if (totalNum) {
+    if (+displayValue.textContent > 0) {
+      displayValue.textContent = `-${displayValue.textContent}`;
+      totalNum = displayValue.textContent;
+    } else {
+      displayValue.textContent = -1 * Number(displayValue.textContent);
+      totalNum = displayValue.textContent;
+    }
+  } else {
+    +displayValue.textContent > 0
+      ? (displayValue.textContent = `-${displayValue.textContent}`)
+      : (displayValue.textContent = -1 * Number(displayValue.textContent));
+  }
 });
