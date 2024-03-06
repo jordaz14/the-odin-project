@@ -36,6 +36,8 @@ function divideNums(n1, n2) {
     return "Nope.";
   } else if (n1 / n2 > DIGITLIMIT) {
     return (n1 / n2).toExponential(2);
+  } else if ((n1 / n2).toString().length > 9) {
+    return Number((n1 / n2).toString().slice(0, 9));
   } else {
     return n1 / n2;
   }
