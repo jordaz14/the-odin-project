@@ -59,8 +59,19 @@ let operatorButtons = Array.from(document.querySelectorAll(".operator"));
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent == "=") {
+      if (totalNum) {
+        return;
+      } else {
+        secondNum = displayValue.textContent;
+        totalNum = calcNums(operator, +firstNum, +secondNum);
+        displayValue.textContent = totalNum;
+      }
     } else {
-      if (firstNum) {
+      if (totalNum) {
+        operator = button.textContent;
+        firstNum = totalNum;
+        secondNum = "";
+      } else if (firstNum) {
         secondNum = displayValue.textContent;
         totalNum = calcNums(operator, +firstNum, +secondNum);
         displayValue.textContent = totalNum;
