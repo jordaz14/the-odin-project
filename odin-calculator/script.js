@@ -19,10 +19,10 @@ function divideNums(n1, n2) {
   return n1 / n2;
 }
 
-let firstNum;
-let secondNum;
-let operator;
-let result;
+let firstNum = "";
+let secondNum = "";
+let operator = "";
+let totalNum = "";
 
 function calcNums(operator, firstNum, secondNum) {
   return operator == "+"
@@ -36,21 +36,20 @@ function calcNums(operator, firstNum, secondNum) {
     : "";
 }
 
-let calcScreen = document.querySelector(".calc-container-screen");
+let displayValue = document.querySelector(".calc-container-screen");
 
 let operandButtons = Array.from(document.querySelectorAll(".operand"));
 
 operandButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (result) {
-      result = "";
-      firstNum = "";
-      secondNum = "";
-      operator = "";
-      calcScreen.textContent = "";
-      calcScreen.textContent += button.textContent;
+    if (displayValue.textContent.length == 9) {
+      return;
+    } else if (totalNum) {
+      displayValue.textContent = "";
+      displayValue.textContent += button.textContent;
+      totalNum = "";
     } else {
-      calcScreen.textContent += button.textContent;
+      displayValue.textContent += button.textContent;
     }
   });
 });
@@ -60,27 +59,18 @@ let operatorButtons = Array.from(document.querySelectorAll(".operator"));
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent == "=") {
-      if (firstNum) {
-        secondNum = calcScreen.textContent;
-        result = calcNums(operator, Number(firstNum), Number(secondNum));
-        calcScreen.textContent = result;
-      } else {
-        firstNum = calcScreen.textContent;
-      }
     } else {
-      if (result) {
-        firstNum = result;
-        result = "";
-        secondNum = 0;
-        calcScreen.textContent = "";
-      } else if (firstNum) {
-        secondNum = calcScreen.textContent;
-        result = calcNums(operator, Number(firstNum), Number(secondNum));
-        calcScreen.textContent = result;
-      } else {
-        firstNum = calcScreen.textContent;
+      if (firstNum) {
+        secondNum = displayValue.textContent;
+        totalNum = calcNums(operator, +firstNum, +secondNum);
+        displayValue.textContent = totalNum;
         operator = button.textContent;
-        calcScreen.textContent = "";
+        firstNum = totalNum;
+        secondNum = "";
+      } else {
+        operator = button.textContent;
+        firstNum = displayValue.textContent;
+        displayValue.textContent = "";
       }
     }
   });
@@ -88,8 +78,8 @@ operatorButtons.forEach((button) => {
 
 let clearButton = document.querySelector("#clearButton");
 clearButton.addEventListener("click", () => {
-  calcScreen.textContent = "";
+  displayValue.textContent = "";
   firstNum = "";
   secondNum = "";
-  operator = "";
+  totalNum = "";
 });
