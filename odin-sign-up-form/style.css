@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +13,27 @@ body {
 }
 
 .img-section {
-  background-color: aqua;
+  background-image: url(./assets/cafe.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
   flex: 1;
+  position: relative;
+}
+
+.img-banner {
+  background-color: #3b373762;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  text-align: center;
+  font-family: "Young Serif";
+  font-size: 4rem;
+  color: wheat;
 }
 
 .info-section {
-  background-color: azure;
+  background-color: #e4e2dd;
   flex: 2;
 }
