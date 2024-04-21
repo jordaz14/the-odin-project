@@ -37,3 +37,7 @@ body {
   background-color: #e4e2dd;
   flex: 2;
 }
+
+form {
+  background-color: #fff;
+}
