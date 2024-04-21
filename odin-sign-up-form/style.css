@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: beige;
+
+  display: flex;
+}
+
+.img-section {
+  background-color: aqua;
+  flex: 1;
+}
+
+.info-section {
+  background-color: azure;
+  flex: 2;
+}
