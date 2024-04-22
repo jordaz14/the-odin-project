@@ -8,8 +8,14 @@
 body {
   min-height: 100vh;
   background-color: beige;
+  font-family: sans-serif;
 
   display: flex;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
 }
 
 .img-section {
@@ -34,10 +40,67 @@ body {
 }
 
 .info-section {
-  background-color: #e4e2dd;
+  background-color: #f9fafb;
   flex: 2;
+  padding: 20vh 0px;
 }
 
-form {
+.info-section-header {
+  padding: 0px 30px;
+}
+
+fieldset {
   background-color: #fff;
+  padding: 20px 30px;
+  border: none;
+  box-shadow: 2px 6px 10.9px hsl(0deg 0% 0% / 0.33);
+}
+
+fieldset p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 0.6rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+input:focus {
+  border-color: rgb(176, 218, 255);
+  outline: none;
+  box-shadow: 2px 2px 2px hsl(0deg 0% 0% / 0.33);
+}
+
+input:invalid {
+  border-color: red;
+}
+
+button {
+  margin: 20px 30px;
+  background-color: #2d1106;
+  color: white;
+  padding: 10px 40px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.account-link {
+  margin-left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #2d1106;
+  font-weight: bold;
 }

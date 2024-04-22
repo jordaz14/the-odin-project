@@ -9,21 +9,58 @@
   <body>
     <div class="img-section"><div class="img-banner">MyCoffee</div></div>
     <div class="info-section">
-      <h1>
-        This is not a real online service! You know you need something like this
-        in your life to help you realize you deepest dreams. Sign up
-        <em>now</em> to get started. <br /><br />You <em>know</em> you want to.
-      </h1>
+      <div class="info-section-header">
+        <h1>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize you deepest dreams. Sign up
+          <em>now</em> to get started. <br /><br />You <em>know</em> you want
+          to.
+        </h1>
+      </div>
       <form action="">
         <fieldset>
           <p>Let's do this!</p>
-          <label for=""></label for="fName">FIRST NAME<input type="text" id="fName" />
-          <label for=""></label for="lName">LAST NAME<input type="text" id="lName" />
-          <label for=""></label for="email">EMAIL<input type="text" id="email" />
+          <div class="form-row">
+            <div class="form-input">
+              <label for="fName">FIRST NAME</label
+              ><input type="text" id="fName" />
+            </div>
+            <div class="form-input">
+              <label for="lName">LAST NAME</label
+              ><input type="text" id="lName" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-input">
+              <label for="email">EMAIL</label
+              ><input type="email" id="email" placeholder="name@gmail.com" />
+            </div>
+            <div class="form-input">
+              <label for="number">PHONE NUMBER</label
+              ><input
+                type="tel"
+                id="number"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="###-###-####"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-input">
+              <label for="password">PASSWORD</label
+              ><input type="password" id="password" />
+            </div>
+            <div class="form-input">
+              <label for="confirmPassword">CONFIRM PASSWORD</label
+              ><input type="text" id="confirmPassword" />
+            </div>
+          </div>
         </fieldset>
         <button type="submit">Create Account</button>
       </form>
-      <p>Already have an account? <span><a href="">Log In</a></span></p>
+      <p class="account-link">
+        Already have an account? <span><a href="">Log In</a></span>
+      </p>
     </div>
   </body>
 </html>
