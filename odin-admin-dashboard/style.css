@@ -35,11 +35,11 @@ nav ul li {
 
 header {
   padding: 20px;
-  background-color: rgb(253, 253, 253);
+  background-color: white;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 2fr;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(57, 101, 146, 0) 0px 8px 24px;
 }
 
 main {
@@ -48,7 +48,7 @@ main {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
 }
 
 .project-section {
@@ -62,9 +62,29 @@ main {
   grid-template-rows: auto 1fr;
 }
 
-.announcement-card {
+.trending-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.project-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.project-section-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.content-card {
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 20px;
+  border-left: 4px solid;
+  border-color: rgba(0, 0, 255, 0.493);
 }
 
 .header-welcome {
@@ -114,4 +134,23 @@ main {
   padding-left: 10px;
   display: grid;
   align-items: center;
+}
+
+.trending-item p:nth-child(1) {
+  font-weight: bold;
+}
+
+.trending-item {
+  margin-bottom: 10px;
+}
+
+.announce-item {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px dotted;
+  border-color: rgba(0, 0, 255, 0.493);
+}
+
+.announce-item p:nth-child(1) {
+  font-weight: bold;
 }
