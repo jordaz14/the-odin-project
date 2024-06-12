@@ -4,5 +4,54 @@
 }
 
 body {
-  background-color: beige;
+  background-color: rgba(247, 242, 235, 0.747);
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+form button {
+  background-color: green;
+  color: white;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.book-card {
+  background-color: rgba(241, 225, 200, 0.747);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.book-card button {
+  width: 25%;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
 }
