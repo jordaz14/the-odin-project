@@ -71,6 +71,7 @@ function refreshBookLibrary() {
 
     bookDeleteButton.addEventListener("click", () => {
       myLibrary.splice(book.id, 1);
+      myLibrary.map((el, index) => (el.id = index));
       bookSection.innerHTML = "";
       refreshBookLibrary();
     });
