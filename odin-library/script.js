@@ -8,12 +8,13 @@ button.addEventListener("click", (e) => {
 
 const bookSection = document.querySelector("section");
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, id) {
   // construct book object
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.id = id;
 }
 
 function addBookToLibrary() {
@@ -25,15 +26,20 @@ function addBookToLibrary() {
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
 
+  let id = myLibrary.length;
+
   // create new book from input
-  let newBook = new Book(title, author, pages, "Unread");
+  let newBook = new Book(title, author, pages, "Unread", id);
 
   // push book to Arr
   myLibrary.push(newBook);
 
   // iterate through books cards and post to DOM
+  refreshBookLibrary();
+}
+
+function refreshBookLibrary() {
   for (let book of myLibrary) {
-    console.log(book.title);
     const bookCard = document.createElement("div");
     bookCard.className = "book-card";
     bookSection.appendChild(bookCard);
@@ -62,6 +68,12 @@ function addBookToLibrary() {
     const bookDeleteButton = document.createElement("button");
     bookDeleteButton.className = "delete-button";
     bookDeleteButton.textContent = "Delete";
+
+    bookDeleteButton.addEventListener("click", () => {
+      myLibrary.splice(book.id, 1);
+      bookSection.innerHTML = "";
+      refreshBookLibrary();
+    });
 
     bookCard.append(
       bookTitle,
