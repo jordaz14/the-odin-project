@@ -9,7 +9,7 @@ button.addEventListener("click", (e) => {
 const bookSection = document.querySelector("section");
 
 function Book(title, author, pages, read) {
-  // the constructor...
+  // construct book object
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -17,20 +17,21 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  // do stuff here
-
   // clears catalog of books
   bookSection.innerHTML = "";
 
+  // gather form input
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
 
+  // create new book from input
   let newBook = new Book(title, author, pages, "Unread");
 
+  // push book to Arr
   myLibrary.push(newBook);
 
-  // iterates through books cards and posts to DOM
+  // iterate through books cards and post to DOM
   for (let book of myLibrary) {
     console.log(book.title);
     const bookCard = document.createElement("div");
@@ -52,6 +53,8 @@ function addBookToLibrary() {
     const bookReadButton = document.createElement("button");
     bookReadButton.className = "read-button";
     bookReadButton.textContent = "Mark as Read";
+
+    // create 'mark as read' button functionality
     bookReadButton.addEventListener("click", () => {
       bookRead.textContent = "Read";
     });
